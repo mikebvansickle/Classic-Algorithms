@@ -1,3 +1,5 @@
+import random
+
 def mergeSort(list):
     if len(list)>1:
         mid = len(list)//2
@@ -73,15 +75,27 @@ def partition(list, first, last):
 
     return right
 
-print("Merge Sort")
-array = [55, 26, 76, 23, 87, 21, 12, 65, 105, 73, 27, 76]
+def makeArray(n):
+    array = []
+    for i in range(0, n):
+        array.append(random.randint(1,101))
+    print(array)
+    return array
+
+
+print("\n<Sort Name>")
+print("<Original Array>")
+print("<Sorted Array>")
+
+print("\nMerge Sort")
+array = makeArray(15)
 print(mergeSort(array))
 
 print("\nBubble Sort")
-array = [55, 26, 76, 23, 87, 21, 12, 65, 105, 73, 27, 76]
+array = makeArray(15)
 print(mergeSort(array))
 
 print("\nQuick Sort")
-array = [55, 26, 76, 23, 87, 21, 12, 65, 105, 73, 27, 76]
+array = makeArray(15)
 quickSort(array)
 print(array)
